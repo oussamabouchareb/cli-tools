@@ -1,7 +1,7 @@
-export function packageTemplate(moduleName: string) {
+export function packageTemplate(projectName: string) {
   return `
   {
-    "name": "${moduleName.toLowerCase()}",
+    "name": "${projectName.toLowerCase()}",
     "version": "0.0.1",
     "main": "index.ts",
     "license": "MIT",

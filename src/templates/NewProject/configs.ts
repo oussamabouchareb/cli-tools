@@ -1,4 +1,4 @@
-export const tsconfig = `
+export const tsconfigTemplate = `
 {
   "compilerOptions": {
     "target": "ES2018",
@@ -21,9 +21,9 @@ export const tsconfig = `
 }
 `;
 
-export const gitignore = "node_modules";
+export const gitignoreTemplate = "node_modules";
 
-export const ormconfig = `{
+export const ormconfigTemplate = `{
   "type": "postgres",
   "host": "localhost",
   "port": "5432",
@@ -42,7 +42,7 @@ export const ormconfig = `{
     "subscribersDir": "src/orm/subscriber"
   }
 }`;
-export const nodemon = `
+export const nodemonTemplate = `
 {
   "watch": ["src"],
   "ext": "ts,json",
@@ -50,7 +50,7 @@ export const nodemon = `
   "exec": "ts-node  --transpile-only ./src/index.ts"
 }
 `;
-export const context = `
+export const contextTemplate = `
 import {getConnection } from "typeorm";
 
 export interface Context {

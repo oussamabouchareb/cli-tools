@@ -1,20 +1,26 @@
+#!usr/bin/env node
+
 import inquirer from "inquirer";
 import { createModule } from "./modules";
 import { Command } from "commander";
-
+import { defaultModuleName } from "./config";
+import { createProject } from "./modules/createProject";
 const program = new Command();
 program.version("0.0.1");
 
 program
   .description("a CLI tool from and for the delta project")
-  .version("0.0.1", "-v, - version");
-
-program.option("-m --module <string>").option("-t --typeorm <boolean>");
-
-program.parse(process.argv);
+  .version("0.0.1", "-v, - version")
+  .option("-m --module <string>", "create a module in an existing project")
+  .option("-t --typeorm <boolean>", "create a module or a project with typeorm")
+  .option("-p --project <string>", "create a new project")
+  .parse(process.argv);
 
 if (program.opts().module) {
   createModule(program.opts().module, program.opts().typeorm);
+  process.exit();
+} else if (program.opts().project) {
+  createProject(program.opts().project, program.opts().typeorm);
   process.exit();
 }
 
@@ -50,7 +56,7 @@ inquirer
                   name: "moduleName",
                   message: "what's your module's name?",
                   default() {
-                    return "myModule";
+                    return defaultModuleName;
                   },
                 },
               ])
