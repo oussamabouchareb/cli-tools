@@ -2,7 +2,7 @@ import fs from "fs";
 import { join } from "path";
 import chalk from "chalk";
 
-export function createFile(fileName: any, data: any) {
+export function createFile(fileName: string, data: string) {
   let path = join(process.cwd(), fileName);
 
   if (!fs.existsSync(path)) {

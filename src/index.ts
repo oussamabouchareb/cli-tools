@@ -9,12 +9,12 @@ program
   .description("a CLI tool from and for the delta project")
   .version("0.0.1", "-v, - version");
 
-program.option("-m --module <string>").option("-orm --typeorm <boolean>");
+program.option("-m --module <string>").option("-t --typeorm <boolean>");
 
 program.parse(process.argv);
 
 if (program.opts().module) {
-  createModule(program.opts().module);
+  createModule(program.opts().module, program.opts().typeorm);
   process.exit();
 }
 
@@ -56,7 +56,25 @@ inquirer
               ])
               .then((answers) => {
                 if (answers.moduleName) {
-                  createModule(answers.moduleName);
+                  const moduleName = answers.moduleName;
+                  inquirer
+                    .prompt([
+                      {
+                        type: "confirm",
+                        name: "typeorm",
+                        message:
+                          "do you want to add a typeorm entity with this module?",
+                        default() {
+                          return false;
+                        },
+                      },
+                    ])
+                    .then((answers) => {
+                      createModule(moduleName, answers.typeorm);
+                    })
+                    .catch((error) => {
+                      throw error;
+                    });
                 }
               })
               .catch((error) => {
