@@ -1,10 +1,11 @@
 {
   "name": "tdp-tools",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "a cli tool for the delta project",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "source": "src/index.ts",
+  "bin": "src/index.js",
   "author": "oussama bouchareb",
   "license": "MIT",
   "scripts": {
