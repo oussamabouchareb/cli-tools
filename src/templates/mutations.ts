@@ -3,7 +3,7 @@ import { capitalizeFirstLetter } from "../utils";
 export function mutationsTemplate(moduleName: string) {
   return `import { getConnection } from "typeorm";
 import { ${capitalizeFirstLetter(
-    moduleName
+    moduleName,
   )} } from "../../orm/entity/${capitalizeFirstLetter(moduleName)}";
 
 export async function create${capitalizeFirstLetter(moduleName)}(
@@ -13,7 +13,7 @@ export async function create${capitalizeFirstLetter(moduleName)}(
   __info: any
 ) {
   const ${moduleName.toLowerCase()} = new ${capitalizeFirstLetter(
-    moduleName
+    moduleName,
   )}();
 
   ${moduleName.toLowerCase()}.name = args.name;

@@ -24,7 +24,7 @@ export function createModule(moduleName: string, typeorm: boolean) {
     // Create Entity File for current module
     createFile(
       join(pathToEntity, `${capitalizeFirstLetter(moduleName)}.ts`),
-      entityTemplate(moduleName)
+      entityTemplate(moduleName),
     );
   }
   // root module folder
@@ -36,13 +36,13 @@ export function createModule(moduleName: string, typeorm: boolean) {
   // type.graphql
   createFile(
     join(pathToModule, "graphql", "type.graphql"),
-    typeTemplate(moduleName)
+    typeTemplate(moduleName),
   );
 
   // operations.graphql
   createFile(
     join(pathToModule, "graphql", "operations.graphql"),
-    operationsTemplate(moduleName)
+    operationsTemplate(moduleName),
   );
 
   // mutations.ts

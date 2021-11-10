@@ -24,7 +24,7 @@ export const ${moduleName.toLowerCase()}SubSchema = addResolversToSchema({
     },
     Mutation: {
       create${capitalizeFirstLetter(moduleName)}:create${capitalizeFirstLetter(
-    moduleName
+    moduleName,
   )},
     },
     Subscription: {

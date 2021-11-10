@@ -6,7 +6,7 @@ export function operationsTemplate(moduleName: string) {
   }
   type mutation {
     create${capitalizeFirstLetter(
-      moduleName
+      moduleName,
     )}(name: String!):${capitalizeFirstLetter(moduleName)}
   }
   type Subscription {

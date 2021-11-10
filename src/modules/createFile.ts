@@ -3,7 +3,7 @@ import { join } from "path";
 import chalk from "chalk";
 
 export function createFile(fileName: string, data: string) {
-  let path = join(process.cwd(), fileName);
+  const path = join(process.cwd(), fileName);
 
   if (!fs.existsSync(path)) {
     fs.writeFileSync(path, data);
