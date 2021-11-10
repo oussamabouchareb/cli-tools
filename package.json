@@ -9,12 +9,13 @@
   "license": "MIT",
   "scripts": {
     "start": "ts-node src/index.ts",
+    "clean": "rimraf build",
     "build": "rollup -c",
     "publish": "npm publish --access=public",
-    "prepublish": "yarn build",
+    "prepublishOnly": "npm run clean && npm run format:check && npm run lint",
     "lint": "eslint \"src/**/*.ts\" --fix",
-    "prettier:format": "prettier --write 'src/**/*.ts'",
-    "prettier:check": "prettier --check 'src/**/*.ts'"
+    "format": "prettier --write 'src/**/*.ts'",
+    "format:check": "prettier --check 'src/**/*.ts'"
   },
   "dependencies": {
     "chalk": "^4.1.2",
@@ -38,6 +39,7 @@
     "eslint-plugin-prettier": "3.4.0",
     "jest": "^27.3.1",
     "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
     "rollup": "^2.59.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.30.0",
