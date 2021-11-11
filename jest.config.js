@@ -1,6 +1,6 @@
 module.exports = {
   preset: "ts-jest",
-  testEnvironement: "node",
+  testEnvironment: "node",
   testRegex: "(test/.*\\.spec\\.ts)",
   coverageProvider: "v8",
   globals: {

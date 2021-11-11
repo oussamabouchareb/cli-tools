@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "lib": ["es2017"],
@@ -20,5 +19,5 @@
     "isolatedModules": true
   },
   "include": ["./src/**/*"],
-  "exclude": ["node_modules", "**/*.test.tsx"]
+  "exclude": ["node_modules", "build"]
 }
