@@ -1,18 +1,35 @@
 {
   "name": "tdp-tools",
-  "version": "0.1.0",
+  "version": "1.0.2",
   "description": "a cli tool for the delta project",
+  "homepage": "https://github.com/oussamabouchareb/cli-tools",
+  "repository": "github:oussamabouchareb/cli-tools",
+  "author": "oussama bouchareb <commensalism@protonmail.com> (https://github.com/oussamabouchareb)",
+  "license": "MIT",
+  "keywords": [
+    "graphql",
+    "cli",
+    "graphql-tools",
+    "typeorm"
+  ],
   "main": "build/index.js",
   "source": "src/index.ts",
-  "bin": "build/index.js",
-  "author": "oussama bouchareb",
-  "license": "MIT",
+  "bin": {
+    "tdp-tools": "build/index.js"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "files": [
+    "LICENSE.md",
+    "build"
+  ],
   "scripts": {
     "start": "ts-node src/index.ts",
     "clean": "rimraf build",
-    "build": "rollup -c",
-    "publish": "npm publish --access=public",
-    "prepublishOnly": "npm run clean && npm run format:check && npm run lint",
+    "build": "npm run clean && rollup -c",
+    "publish:public": "npm publish --access=public",
+    "prepublishOnly": "npm run format:check && npm run lint && npm run build",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "format": "prettier --write 'src/**/*.ts'",
     "format:check": "prettier --check 'src/**/*.ts'"
@@ -20,7 +37,8 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^8.3.0",
-    "inquirer": "^8.2.0"
+    "inquirer": "^8.2.0",
+    "rollup-plugin-preserve-shebang": "^1.0.1"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.16.0",
@@ -52,5 +70,14 @@
     "chalk": "*",
     "commander": "*",
     "inquirer": "*"
-  }
+  },
+  "npmName": "tdp-tools",
+  "npmFileMap": [
+    {
+      "basepath": "/build/",
+      "files": [
+        "*.js"
+      ]
+    }
+  ]
 }
