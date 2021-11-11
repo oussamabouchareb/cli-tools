@@ -1,4 +1,4 @@
-name: tests
+name: Tests
 
 on:
   push:
@@ -24,11 +24,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Check formmating
+      - name: Check formatting
         run: npm run format:check
 
       - name: Lint code
         run: npm run lint
-
-      - name: Run test Suite
-        npm: npm test
