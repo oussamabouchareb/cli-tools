@@ -4,7 +4,7 @@ a tool to help with the creation of graphql-tools based modules and projects tha
 
 and soon to be added:
 React components and projects that follow tdp's design patterns
-
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/oussamabouchareb/cli-tools/Tests/main?style=flat-square)
 [![GitHub issues](https://img.shields.io/github/issues/oussamabouchareb/cli-tools?style=flat-square)](https://github.com/oussamabouchareb/cli-tools/issues)
 [![GitHub stars](https://img.shields.io/github/stars/oussamabouchareb/cli-tools?style=flat-square)](https://github.com/oussamabouchareb/cli-tools/stargazers)
 [![GitHub license](https://img.shields.io/github/license/oussamabouchareb/cli-tools?style=flat-square)](https://github.com/oussamabouchareb/cli-tools)
