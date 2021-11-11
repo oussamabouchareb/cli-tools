@@ -1,1 +1,1 @@
-export const defaultModuleName = "User";
+export const defaultModuleName: string = "User";
