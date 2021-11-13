@@ -13,6 +13,7 @@
     "typeorm"
   ],
   "main": "build/index.js",
+  "module": "./lib/index.es.js",
   "source": "src/index.ts",
   "bin": {
     "tdp-tools": "build/index.js"
@@ -39,7 +40,6 @@
   "dependencies": {
     "chalk": "*",
     "commander": "*",
-    "inquirer": "*",
     "rollup-plugin-preserve-shebang": "^1.0.1"
   },
   "devDependencies": {
@@ -71,8 +71,7 @@
   },
   "peerDependencies": {
     "chalk": "*",
-    "commander": "*",
-    "inquirer": "*"
+    "commander": "*"
   },
   "npmName": "tdp-tools",
   "npmFileMap": [
